@@ -6,9 +6,7 @@ import EmployeeHome from '../screens/employee-home';
 const Navigator = () => {
   const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="EmployeeHome" component={EmployeeHome} />
     </Stack.Navigator>

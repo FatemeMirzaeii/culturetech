@@ -10,7 +10,7 @@ export default StyleSheet.create({
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
-    color: COLORS.white,
+    color: COLORS.black,
     fontFamily: FONTS.bold,
     textAlign: 'center',
   },

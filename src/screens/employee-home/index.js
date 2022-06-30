@@ -6,20 +6,34 @@ import styles from './style';
 
 const EmployeeHome = () => {
   return (
-    <SafeAreaView style={styles.backgroundStyle}>
+    <SafeAreaView>
       <View style={styles.sectionContainer}>
-        <Text style={styles.sectionDescription}>به تپسی خوش‌آمدی!</Text>
-        <Text style={styles.sectionDescription}>
-          خیلی خوشحالیم که اینجا میبینیمت!{'\n'}امیدواریم روزها و موفقیت‌های
-          خوبی رو کنار هم داشته باشیم.{'\n'}آماده‌ای سفرتو با ما شروع کنی؟
-        </Text>
+        <Text style={styles.sectionDescription}>فاطمه میرزایی</Text>
+        <Text style={styles.sectionDescription}>برنامه‌نویس بک‌اند</Text>
+        <Text style={styles.sectionDescription}>شروع همکاری:</Text>
         <Button
           icon="account"
           mode="contained"
           color={COLORS.white}
-          labelStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}
+          labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
           onPress={() => console.log('Pressed')}>
-          بریم!
+          قبل از اومدن چیا باید بدونی؟
+        </Button>
+        <Button
+          icon="account"
+          mode="contained"
+          color={COLORS.white}
+          labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
+          onPress={() => console.log('Pressed')}>
+          درباره شرکت
+        </Button>
+        <Button
+          icon="account"
+          mode="contained"
+          color={COLORS.white}
+          labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
+          onPress={() => console.log('Pressed')}>
+          مدیران مجموعه و اعضای تیم
         </Button>
       </View>
     </SafeAreaView>
