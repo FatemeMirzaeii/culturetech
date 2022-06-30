@@ -4,7 +4,11 @@ export const WIDTH = Math.round(Dimensions.get('window').width);
 
 export const HEIGHT = Math.round(Dimensions.get('window').height);
 
-export const COLOR = {};
+export const COLOR = {
+  white: '#FFFFFF',
+  black: '#111111',
+  orange: '#FF9900',
+};
 
 export const FONT = {
   regular: 'IRANSansMobile(FaNum)',
