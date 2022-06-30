@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import {COLORS, FONTS} from '../../styles/static';
 
 export default StyleSheet.create({
-  container: {flex: 1},
+  container: {height: '100%'},
   fab: {
     backgroundColor: COLORS.orange,
     position: 'absolute',
