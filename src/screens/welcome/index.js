@@ -4,7 +4,7 @@ import {COLORS, FONTS} from '../../styles/static';
 import {Button} from 'react-native-paper';
 import styles from './style';
 
-const Home = () => {
+const Welcome = () => {
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       <View style={styles.sectionContainer}>
@@ -25,4 +25,4 @@ const Home = () => {
     </SafeAreaView>
   );
 };
-export default Home;
+export default Welcome;
