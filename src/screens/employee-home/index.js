@@ -16,7 +16,7 @@ const EmployeeHome = ({navigation}) => {
           mode="contained"
           color={COLORS.white}
           labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
-          onPress={() => console.log('Pressed')}>
+          onPress={() => navigation.navigate('BeforeComing')}>
           قبل از اومدن چیا باید بدونی؟
         </Button>
         <Button
