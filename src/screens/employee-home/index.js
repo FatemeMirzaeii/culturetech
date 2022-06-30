@@ -4,7 +4,7 @@ import {COLORS, FONTS} from '../../styles/static';
 import {Button} from 'react-native-paper';
 import styles from './style';
 
-const EmployeeHome = () => {
+const EmployeeHome = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.sectionContainer}>
@@ -24,7 +24,7 @@ const EmployeeHome = () => {
           mode="contained"
           color={COLORS.white}
           labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
-          onPress={() => console.log('Pressed')}>
+          onPress={() => navigation.navigate('AboutCo')}>
           درباره شرکت
         </Button>
         <Button
