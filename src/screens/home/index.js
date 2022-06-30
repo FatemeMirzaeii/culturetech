@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
-import {COLOR, FONT} from '../../styles/static';
+import {COLORS, FONTS} from '../../styles/static';
 import {Button} from 'react-native-paper';
 import styles from './style';
 
@@ -16,8 +16,8 @@ const Home = () => {
         <Button
           icon="account"
           mode="contained"
-          color={COLOR.white}
-          labelStyle={{color: COLOR.orange, fontFamily: FONT.medium}}
+          color={COLORS.white}
+          labelStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}
           onPress={() => console.log('Pressed')}>
           بریم!
         </Button>

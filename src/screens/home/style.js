@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {COLOR, FONT} from '../../styles/static';
+import {COLORS, FONTS} from '../../styles/static';
 
 export default StyleSheet.create({
   sectionContainer: {
@@ -10,12 +10,12 @@ export default StyleSheet.create({
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
-    color: COLOR.white,
-    fontFamily: FONT.bold,
+    color: COLORS.white,
+    fontFamily: FONTS.bold,
     textAlign: 'center',
   },
   backgroundStyle: {
-    backgroundColor: COLOR.orange,
+    backgroundColor: COLORS.orange,
     height: '100%',
   },
 });
