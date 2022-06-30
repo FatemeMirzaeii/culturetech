@@ -18,7 +18,7 @@ const Welcome = ({navigation}) => {
           mode="contained"
           color={COLORS.white}
           labelStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}
-          onPress={() => navigation.navigate('EmployeeHome')}>
+          onPress={() => navigation.navigate('EmployerHome')}>
           بریم!
         </Button>
       </View>
