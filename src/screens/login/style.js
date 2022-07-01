@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {COLORS, FONTS} from '../../styles/static';
 
 export default StyleSheet.create({
   image: {
@@ -16,12 +17,12 @@ export default StyleSheet.create({
     paddingBottom: '30%',
   },
   heading: {
+    fontFamily: FONTS.bold,
     fontSize: 30,
-    fontWeight: 'bold',
     marginLeft: '10%',
     marginTop: '5%',
     marginBottom: '30%',
-    color: 'black',
+    color: COLORS.black,
   },
   form: {
     flex: 1,
@@ -38,14 +39,14 @@ export default StyleSheet.create({
   input: {
     width: '80%',
     borderBottomWidth: 1,
-    borderBottomColor: 'black',
+    borderBottomColor: COLORS.orange,
     paddingTop: 10,
     fontSize: 16,
     minHeight: 40,
   },
   button: {
     width: '80%',
-    backgroundColor: 'black',
+    backgroundColor: COLORS.orange,
     height: 40,
     borderRadius: 50,
     justifyContent: 'center',
@@ -53,24 +54,9 @@ export default StyleSheet.create({
     marginVertical: 5,
   },
   buttonText: {
-    color: 'white',
+    color: COLORS.white,
     fontSize: 16,
-    fontWeight: '400',
-  },
-  buttonAlt: {
-    width: '80%',
-    borderWidth: 1,
-    height: 40,
-    borderRadius: 50,
-    borderColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: 5,
-  },
-  buttonAltText: {
-    color: 'black',
-    fontSize: 16,
-    fontWeight: '400',
+    fontFamily: FONTS.medium,
   },
   message: {
     fontSize: 16,

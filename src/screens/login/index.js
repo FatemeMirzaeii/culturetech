@@ -14,11 +14,6 @@ const Login = () => {
   const [message, setMessage] = useState('');
   const [isLogin, setIsLogin] = useState(true);
 
-  const onChangeHandler = () => {
-    setIsLogin(!isLogin);
-    setMessage('');
-  };
-
   const onLoggedIn = token => {
     fetch(`${API_URL}/private`, {
       method: 'GET',
@@ -82,35 +77,26 @@ const Login = () => {
 
   return (
     <View style={styles.card}>
-      <Text style={styles.heading}>{isLogin ? 'Login' : 'Signup'}</Text>
+      <Text style={styles.heading}>ورود</Text>
       <View style={styles.form}>
         <View style={styles.inputs}>
           <TextInput
             style={styles.input}
-            placeholder="Email"
+            placeholder="ایمیل"
             autoCapitalize="none"
-            onChangeText={setEmail}></TextInput>
-          {!isLogin && (
-            <TextInput
-              style={styles.input}
-              placeholder="Name"
-              onChangeText={setName}></TextInput>
-          )}
+            onChangeText={setEmail}
+          />
           <TextInput
             secureTextEntry={true}
             style={styles.input}
-            placeholder="Password"
-            onChangeText={setPassword}></TextInput>
+            placeholder="رمز"
+            onChangeText={setPassword}
+          />
           <Text style={[styles.message, {color: isError ? 'red' : 'green'}]}>
             {message ? getMessage() : null}
           </Text>
           <TouchableOpacity style={styles.button} onPress={onSubmitHandler}>
-            <Text style={styles.buttonText}>Done</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonAlt} onPress={onChangeHandler}>
-            <Text style={styles.buttonAltText}>
-              {isLogin ? 'Sign Up' : 'Log In'}
-            </Text>
+            <Text style={styles.buttonText}>ورود</Text>
           </TouchableOpacity>
         </View>
       </View>
