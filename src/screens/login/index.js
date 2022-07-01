@@ -3,16 +3,14 @@ import {View, Text, TouchableOpacity, TextInput, Platform} from 'react-native';
 import styles from './style';
 
 const API_URL =
-  Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://10.0.2.2:5000';
+  Platform.OS === 'ios' ? 'http://localhost:3000' : 'http://10.0.2.2:3000';
 
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState('');
-  const [isLogin, setIsLogin] = useState(true);
 
   const onLoggedIn = token => {
     fetch(`${API_URL}/private`, {
@@ -40,10 +38,9 @@ const Login = () => {
   const onSubmitHandler = () => {
     const payload = {
       email,
-      name,
       password,
     };
-    fetch(`${API_URL}/${isLogin ? 'login' : 'signup'}`, {
+    fetch(`${API_URL}/'login'`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
