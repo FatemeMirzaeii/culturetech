@@ -24,6 +24,7 @@ const EmployerHome = ({navigation}) => {
       <List.Item
         title="فاطمه میرزایی"
         description="مرکز داده"
+        onPress={() => navigation.navigate('Checklist')}
         left={props => (
           <Progress.Circle
             progress={0.4}

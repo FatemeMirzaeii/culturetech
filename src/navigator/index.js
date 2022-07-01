@@ -5,6 +5,7 @@ import EmployeeHome from '../screens/employee-home';
 import AboutCo from '../screens/about-co';
 import BeforeComing from '../screens/before-coming';
 import EmployerHome from '../screens/employer-home';
+import Checklist from '../screens/checklist';
 
 const Navigator = () => {
   const Stack = createNativeStackNavigator();
@@ -14,6 +15,7 @@ const Navigator = () => {
       <Stack.Screen name="EmployeeHome" component={EmployeeHome} />
       <Stack.Screen name="EmployerHome" component={EmployerHome} />
       <Stack.Screen name="BeforeComing" component={BeforeComing} />
+      <Stack.Screen name="Checklist" component={Checklist} />
       <Stack.Screen name="AboutCo" component={AboutCo} />
     </Stack.Navigator>
   );
