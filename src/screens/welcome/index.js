@@ -3,6 +3,7 @@ import {SafeAreaView, Text, View} from 'react-native';
 import {COLORS, FONTS} from '../../styles/static';
 import {Button} from 'react-native-paper';
 import styles from './style';
+import {saveData} from '../../functions';
 
 const Welcome = ({navigation}) => {
   return (
@@ -18,7 +19,10 @@ const Welcome = ({navigation}) => {
           mode="contained"
           color={COLORS.white}
           labelStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}
-          onPress={() => navigation.navigate('EmployerHome')}>
+          onPress={() => {
+            saveData('welcome', 'true');
+            navigation.navigate('EmployerHome');
+          }}>
           بریم!
         </Button>
       </View>
