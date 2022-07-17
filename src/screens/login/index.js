@@ -28,7 +28,7 @@ const Login = ({navigation}) => {
     saveData('token', token);
     const val = await readData('welcome');
     if (val === 'true') {
-      setPath('EmployerHome');
+      setPath('EmployeeHome');
     } else {
       setPath('Welcome');
     }
