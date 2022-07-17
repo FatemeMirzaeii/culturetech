@@ -2,10 +2,11 @@ import {StyleSheet} from 'react-native';
 import {COLORS, FONTS} from '../../styles/static';
 
 export default StyleSheet.create({
-  image: {
+  safeAreaView: {
     flex: 1,
     width: '100%',
     alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
   },
   card: {
     flex: 1,
