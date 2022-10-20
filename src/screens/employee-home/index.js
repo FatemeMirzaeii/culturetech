@@ -17,7 +17,7 @@ const EmployeeHome = ({navigation}) => {
         <Text style={styles.sectionDescription}>فاطمه میرزایی</Text>
         <Text style={styles.subheader}>برنامه‌نویس بک‌اند</Text>
         <Text style={styles.description}>شروع همکاری:</Text>
-        <Divider />
+        <Divider style={{margin: 10}} />
         <View
           style={{
             flexDirection: 'row',
@@ -29,7 +29,10 @@ const EmployeeHome = ({navigation}) => {
             mode="contained"
             color={COLORS.white}
             style={{width: WIDTH / 3}}
-            labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
+            labelStyle={{
+              color: COLORS.black,
+              fontFamily: FONTS.medium,
+            }}
             onPress={() => navigation.navigate('BeforeComing')}>
             قبل از اومدن چیا باید بدونی؟
           </Button>
@@ -39,7 +42,7 @@ const EmployeeHome = ({navigation}) => {
             style={{width: WIDTH / 3}}
             labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
             onPress={() => navigation.navigate('AboutCo')}>
-            درباره شرکت
+            درباره داتین
           </Button>
         </View>
         <Button
