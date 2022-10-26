@@ -1,12 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, View} from 'react-native';
-import {List} from 'react-native-paper';
+import {List, Checkbox, Card} from 'react-native-paper';
 import {ProgressSteps, ProgressStep} from 'react-native-progress-steps';
 import MapView, {Marker} from 'react-native-maps';
+import * as Animatable from 'react-native-animatable';
 import {COLORS, FONTS} from '../../styles/static';
 import styles from './style';
 
 const BeforeComing = ({navigation}) => {
+  const [checked, setChecked] = useState({
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+  });
+  const [wrong, setWrong] = useState(false);
+  useEffect(() => {
+    console.log(wrong);
+  }, [wrong]);
+  const dressCode = [
+    {
+      id: 1,
+      img: require('../../../assets/images/astro.jpg'),
+      isCorrect: false,
+    },
+    {
+      id: 2,
+      img: require('../../../assets/images/gir.jpg'),
+      isCorrect: true,
+    },
+    {
+      id: 3,
+      img: require('../../../assets/images/images-2.jpeg'),
+      isCorrect: true,
+    },
+    {
+      id: 4,
+      img: require('../../../assets/images/images.jpeg'),
+      isCorrect: false,
+    },
+  ];
   return (
     <View style={{flex: 1}}>
       <ProgressSteps
@@ -59,9 +92,7 @@ const BeforeComing = ({navigation}) => {
               />
               <MapView
                 style={styles.mapStyle}
-                // provider={PROVIDER_GOOGLE}
                 zoomEnabled
-                // zoomControlEnabled
                 initialRegion={{
                   latitude: 35.777632919304054,
                   longitude: 51.42643565711723,
@@ -89,9 +120,7 @@ const BeforeComing = ({navigation}) => {
               />
               <MapView
                 style={styles.mapStyle}
-                // provider={PROVIDER_GOOGLE}
-                // zoomEnabled
-                // zoomControlEnabled
+                zoomEnabled
                 initialRegion={{
                   latitude: 35.728172491515224,
                   longitude: 51.826356480798076,
@@ -120,7 +149,36 @@ const BeforeComing = ({navigation}) => {
             fontFamily: FONTS.medium,
           }}>
           <View style={styles.progressStep}>
-            <Text style={{fontFamily: FONTS.regular}}>لباس اینجا</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-around',
+              }}>
+              {dressCode.map((d, i) => (
+                <Animatable.View
+                  key={d.id}
+                  animation={wrong ? 'swing' : undefined}
+                  onAnimationEnd={() => setWrong(false)}>
+                  <Card style={{width: 150, height: 240, margin: 5}}>
+                    <Card.Cover source={d.img} />
+                    <Card.Actions>
+                      <Checkbox
+                        status={checked[d.id] ? 'checked' : 'unchecked'}
+                        onPress={() => {
+                          if (d.isCorrect) {
+                            setChecked({...checked, [d.id]: !checked[d.id]});
+                          } else {
+                            setWrong(true);
+                          }
+                        }}
+                      />
+                    </Card.Actions>
+                  </Card>
+                </Animatable.View>
+              ))}
+            </View>
           </View>
         </ProgressStep>
       </ProgressSteps>
