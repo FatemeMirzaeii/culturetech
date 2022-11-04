@@ -3,8 +3,9 @@ import {COLORS, FONTS} from '../../styles/static';
 
 export default StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    flex: 1,
+    padding: 24,
+    justifyContent: 'space-between',
   },
   sectionDescription: {
     marginTop: 8,
