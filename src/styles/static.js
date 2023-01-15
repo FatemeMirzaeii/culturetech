@@ -8,6 +8,8 @@ export const COLORS = {
   white: '#FFFFFF',
   black: '#111111',
   orange: '#FF9900',
+  dotin_green: '#1D7453',
+  dotin_beige: '#fff9e7',
 };
 
 export const FONTS = {

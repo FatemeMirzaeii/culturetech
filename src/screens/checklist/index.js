@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {SafeAreaView, View} from 'react-native';
 import {Divider, Checkbox} from 'react-native-paper';
 import {readData, saveData} from '../../functions';
+import {COLORS} from '../../styles/static';
 import styles from './style';
 
 const Checklist = ({navigation}) => {
@@ -72,6 +73,7 @@ const Checklist = ({navigation}) => {
           <Checkbox.Item
             label={i.text}
             labelStyle={styles.textStyle}
+            color={COLORS.dotin_green}
             status={stepsStatus[i.id] ? 'checked' : 'unchecked'}
             onPress={() => {
               const ss = {...stepsStatus, [i.id]: !stepsStatus[i.id]};

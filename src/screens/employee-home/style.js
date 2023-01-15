@@ -6,6 +6,7 @@ export default StyleSheet.create({
     flex: 1,
     padding: 24,
     justifyContent: 'space-between',
+    backgroundColor: COLORS.dotin_beige,
   },
   sectionDescription: {
     marginTop: 8,
@@ -28,8 +29,14 @@ export default StyleSheet.create({
     fontFamily: FONTS.medium,
     textAlign: 'right',
   },
+  cardTitle: {
+    fontSize: 18,
+    color: COLORS.white,
+    fontFamily: FONTS.medium,
+    textAlign: 'center',
+  },
   backgroundStyle: {
-    backgroundColor: COLORS.orange,
+    backgroundColor: COLORS.dotin_green,
     height: '100%',
   },
 });

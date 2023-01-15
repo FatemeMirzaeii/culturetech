@@ -26,54 +26,71 @@ const BeforeComing = ({navigation}) => {
     },
     {
       id: 2,
-      img: require('../../../assets/images/gir.jpg'),
+      img: require('../../../assets/images/cas.png'),
       isCorrect: true,
     },
     {
       id: 3,
-      img: require('../../../assets/images/images-2.jpeg'),
+      img: require('../../../assets/images/dress.jpg'),
       isCorrect: true,
     },
     {
       id: 4,
-      img: require('../../../assets/images/images.jpeg'),
+      img: require('../../../assets/images/nimru.jpg'),
       isCorrect: false,
     },
   ];
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: COLORS.dotin_beige}}>
       <ProgressSteps
-        progressBarColor={COLORS.orange}
-        activeStepIconBorderColor={COLORS.orange}
-        completedProgressBarColor={COLORS.orange}
-        completedStepIconColor={COLORS.orange}>
+        progressBarColor={COLORS.dotin_green}
+        activeStepIconBorderColor={COLORS.dotin_green}
+        completedProgressBarColor={COLORS.dotin_green}
+        completedStepIconColor={COLORS.dotin_green}>
         <ProgressStep
           nextBtnText="بعدی"
-          nextBtnTextStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}>
+          nextBtnTextStyle={{
+            color: COLORS.dotin_green,
+            fontFamily: FONTS.medium,
+          }}>
           <View style={styles.progressStep}>
             <Text
               style={{
+                color: COLORS.black,
                 fontFamily: FONTS.regular,
-                padding: 10,
+                padding: 20,
                 textAlign: 'center',
+                marginTop: 100,
               }}>
-              ساعت کاری ما از ۸ تا ۵ بعد از ظهر هستنش اما میشه با یک ساعت انعطاف
-              کار رو شروع کرد و تا ۶ ادامه داد. پنجشنبه‌ها روز کاری نیست ولی اگه
-              لازم باشه با هماهنگی مدیرت میتونی بیای. لورم ایپسوم متن ساختگی با
-              تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
-              است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-              لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
-              با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-              درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد،
+              فاطمه عزیز سلام!
+              {'\n'}
+              خوشحالیم که قرار هست از این پس نام شما رو در بین همکاران مجموعه‌ی
+              داتین ببینیم، در کنار هم بیشتر یاد بگیریم و اتفاقات جدیدی رو رقم
+              بزنیم.
+              {'\n'}
+              در روز اول شروع به کار خود، در تاریخ یکشنبه 5 تیر ساعت ۹:۰۰ به
+              ترتیب جهت:
+              {'\n'}* عقد قرارداد : طبقه 2 جنوبی واحد امور توسعه سرمایه های
+              انسانی - بخش کارگزینی
+              {'\n'}* تحویل اکانت سیستم : طبقه 7 جنوبی واحد فناوری اطلاعات
+              {'\n'}* محل استقرار :طبقه 7 جنوبی واحد/بخش : مرکز داده
+              {'\n'}مراجعه کنید.
+              {'\n'}
+              مدیر مستقیم : ...
+              {'\n'}
+              همراه فنی: ...
             </Text>
           </View>
         </ProgressStep>
         <ProgressStep
           nextBtnText="بعدی"
           previousBtnText="قبلی"
-          nextBtnTextStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}
+          nextBtnTextStyle={{
+            color: COLORS.dotin_green,
+            fontFamily: FONTS.medium,
+          }}
           previousBtnTextStyle={{
-            color: COLORS.orange,
+            color: COLORS.dotin_green,
             fontFamily: FONTS.medium,
           }}>
           <View style={styles.progressStep}>
@@ -83,6 +100,7 @@ const BeforeComing = ({navigation}) => {
                   33"
                 titleNumberOfLines={2}
                 titleStyle={{
+                  color: COLORS.black,
                   fontFamily: FONTS.regular,
                   textAlign: 'right',
                 }}
@@ -111,6 +129,7 @@ const BeforeComing = ({navigation}) => {
               <List.Item
                 title="پارک فناوری پردیس، خیابان نوآوری ۱۱"
                 titleStyle={{
+                  color: COLORS.black,
                   fontFamily: FONTS.regular,
                   textAlign: 'right',
                 }}
@@ -143,9 +162,12 @@ const BeforeComing = ({navigation}) => {
           previousBtnText="قبلی"
           finishBtnText="اتمام"
           onSubmit={() => navigation.pop()}
-          nextBtnTextStyle={{color: COLORS.orange, fontFamily: FONTS.medium}}
+          nextBtnTextStyle={{
+            color: COLORS.dotin_green,
+            fontFamily: FONTS.medium,
+          }}
           previousBtnTextStyle={{
-            color: COLORS.orange,
+            color: COLORS.dotin_green,
             fontFamily: FONTS.medium,
           }}>
           <View style={styles.progressStep}>
@@ -161,11 +183,18 @@ const BeforeComing = ({navigation}) => {
                   key={d.id}
                   animation={wrong ? 'swing' : undefined}
                   onAnimationEnd={() => setWrong(false)}>
-                  <Card style={{width: 150, height: 240, margin: 5}}>
+                  <Card
+                    style={{
+                      width: 150,
+                      height: 240,
+                      margin: 5,
+                      backgroundColor: COLORS.dotin_beige,
+                    }}>
                     <Card.Cover source={d.img} />
                     <Card.Actions>
                       <Checkbox
                         status={checked[d.id] ? 'checked' : 'unchecked'}
+                        color={COLORS.dotin_green}
                         onPress={() => {
                           if (d.isCorrect) {
                             setChecked({...checked, [d.id]: !checked[d.id]});

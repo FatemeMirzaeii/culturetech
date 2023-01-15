@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
+import {readData} from '../../functions';
+import {useFocusEffect} from '@react-navigation/native';
 import {List, FAB, Divider} from 'react-native-paper';
 import * as Progress from 'react-native-progress';
 import Animated from 'react-native-reanimated';
@@ -8,33 +10,50 @@ import {COLORS, FONTS} from '../../styles/static';
 import styles from './style';
 
 const EmployerHome = ({navigation}) => {
+  const [percentage, setPercentage] = useState();
+
+  useFocusEffect(() => {
+    getProgress();
+  });
+
+  const getProgress = async () => {
+    const ss = await readData('steps');
+    let counter = 0;
+    Object.values(JSON.parse(ss)).forEach(i => {
+      i && counter++;
+    });
+    var percent = counter / 12;
+    setPercentage(percent);
+  };
   const sheetRef = React.useRef(null);
   const renderContent = () => (
     <View
       style={{
-        backgroundColor: 'white',
+        backgroundColor: COLORS.dotin_beige,
         padding: 16,
         height: '100%',
       }}>
-      <Text>Swipe down to close</Text>
+      <Text>فعلا چیزی نیست!</Text>
     </View>
   );
   return (
     <SafeAreaView style={styles.container}>
       <List.Section style={styles.list}>
-        <List.Subheader style={styles.textStyle}>آنبوردینگ</List.Subheader>
+        <List.Subheader style={styles.textStyle}>
+          داشبورد منابع انسانی
+        </List.Subheader>
         <List.Item
           title="فاطمه میرزایی"
           description="مرکز داده"
           onPress={() => navigation.navigate('Checklist')}
           left={props => (
             <Progress.Circle
-              progress={0.4}
+              progress={percentage}
               thickness={6}
-              size={50}
-              color={COLORS.orange}
+              size={100}
+              color={COLORS.dotin_green}
               showsText
-              textStyle={{color: COLORS.orange}}
+              textStyle={{color: COLORS.dotin_green}}
               strokeCap="round"
             />
           )}

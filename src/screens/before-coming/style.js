@@ -2,7 +2,10 @@ import {StyleSheet, Dimensions} from 'react-native';
 import {COLORS, FONTS} from '../../styles/static';
 
 export default StyleSheet.create({
-  progressStep: {alignItems: 'center'},
+  progressStep: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   mapContainer: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,

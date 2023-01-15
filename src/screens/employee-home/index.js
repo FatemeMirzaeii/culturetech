@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
-import {COLORS, FONTS, WIDTH} from '../../styles/static';
-import {List, Button, Divider} from 'react-native-paper';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {COLORS, HEIGHT, WIDTH} from '../../styles/static';
+import {List, Divider, Card} from 'react-native-paper';
 import * as Progress from 'react-native-progress';
 
 import styles from './style';
@@ -26,21 +26,22 @@ const EmployeeHome = ({navigation}) => {
   };
   return (
     <View style={styles.sectionContainer}>
+      <TouchableOpacity onPress={() => navigation.navigate('Checklist')}>
+        <Progress.Circle
+          progress={percentage}
+          thickness={10}
+          size={150}
+          color={COLORS.dotin_green}
+          showsText
+          style={{alignSelf: 'center'}}
+          textStyle={{color: COLORS.dotin_green}}
+          strokeCap="round"
+        />
+      </TouchableOpacity>
       <List.Item
         title="فاطمه میرزایی"
         description="مرکز داده - برنامه نویس بک‌اند"
         onPress={() => navigation.navigate('Checklist')}
-        right={props => (
-          <Progress.Circle
-            progress={percentage}
-            thickness={10}
-            size={100}
-            color={COLORS.orange}
-            showsText
-            textStyle={{color: COLORS.orange}}
-            strokeCap="round"
-          />
-        )}
         titleStyle={styles.sectionDescription}
         descriptionStyle={styles.subheader}
       />
@@ -55,40 +56,61 @@ const EmployeeHome = ({navigation}) => {
       <Divider style={{margin: 10}} />
       <View
         style={{
-          flexDirection: 'row',
+          flexDirection: 'row-reverse',
           width: WIDTH * 0.9,
-          height: 75,
-          justifyContent: 'space-around',
+          height: HEIGHT / 2.5,
+          justifyContent: 'space-between',
         }}>
-        <Button
-          mode="contained"
-          color={COLORS.white}
-          style={{width: WIDTH / 3}}
-          labelStyle={{
-            color: COLORS.black,
-            fontFamily: FONTS.medium,
-          }}
+        <Card
+          style={{backgroundColor: COLORS.dotin_green, width: WIDTH / 2.3}}
           onPress={() => navigation.navigate('BeforeComing')}>
-          قبل از اومدن چیا باید بدونی؟
-        </Button>
-        <Button
-          mode="contained"
-          color={COLORS.white}
-          style={{width: WIDTH / 3}}
-          labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
-          onPress={() => navigation.navigate('AboutCo')}>
-          درباره داتین
-        </Button>
+          <Card.Cover
+            style={{
+              resizeMode: 'contain',
+              marginTop: 5,
+              width: 160,
+              height: 275,
+              alignSelf: 'center',
+            }}
+            source={require('../../../assets/images/befor.png')}
+          />
+          <Card.Title titleStyle={styles.cardTitle} title="قبل از اومدن " />
+        </Card>
+        <View style={{width: WIDTH / 2.3, justifyContent: 'space-between'}}>
+          <Card
+            style={{
+              backgroundColor: COLORS.dotin_green,
+            }}
+            onPress={() => navigation.navigate('Network')}>
+            <Card.Cover
+              style={{
+                resizeMode: 'contain',
+                marginTop: 5,
+                width: 160,
+                height: 100,
+                alignSelf: 'center',
+              }}
+              source={require('../../../assets/images/colleague.png')}
+            />
+            <Card.Title titleStyle={styles.cardTitle} title="همکاران" />
+          </Card>
+          <Card
+            onPress={() => navigation.navigate('AboutCo')}
+            style={{backgroundColor: COLORS.dotin_green}}>
+            <Card.Cover
+              style={{
+                resizeMode: 'contain',
+                marginTop: 5,
+                width: 160,
+                height: 100,
+                alignSelf: 'center',
+              }}
+              source={require('../../../assets/images/about.png')}
+            />
+            <Card.Title titleStyle={styles.cardTitle} title="درباره داتین" />
+          </Card>
+        </View>
       </View>
-      <Button
-        icon="account"
-        mode="contained"
-        color={COLORS.white}
-        style={{marginTop: 20}}
-        labelStyle={{color: COLORS.black, fontFamily: FONTS.medium}}
-        onPress={() => navigation.navigate('Network')}>
-        مدیران مجموعه و اعضای تیم
-      </Button>
     </View>
   );
 };
