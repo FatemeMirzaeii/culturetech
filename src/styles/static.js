@@ -10,6 +10,7 @@ export const COLORS = {
   orange: '#FF9900',
   dotin_green: '#1D7453',
   dotin_beige: '#fff9e7',
+  // dotin_beige: '#fbf3d4',
 };
 
 export const FONTS = {

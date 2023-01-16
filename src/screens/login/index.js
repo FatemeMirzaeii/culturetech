@@ -8,6 +8,7 @@ import {
   ActivityIndicator,
   SafeAreaView,
 } from 'react-native';
+import {List, Divider, Card} from 'react-native-paper';
 import {readData, saveData} from '../../functions';
 import {COLORS} from '../../styles/static';
 import styles from './style';
@@ -56,12 +57,12 @@ const Login = ({navigation}) => {
 
   const onSubmitHandler = () => {
     SetIsLoading(true);
-    console.log('pressssssssssed');
     const payload = {
-      email,
+      username: email,
       password,
     };
-    fetch('http://10.0.2.2:3000/login', {
+    console.log('pressssssssssed', payload);
+    fetch('http://10.0.2.2:8000/api/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,6 +72,8 @@ const Login = ({navigation}) => {
       .then(async res => {
         try {
           const jsonRes = await res.json();
+          // const {token, user} = res.data;
+          console.log(res.data);
           console.log('res', jsonRes);
           if (res.status !== 200) {
             setIsError(true);
@@ -101,7 +104,17 @@ const Login = ({navigation}) => {
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <View style={styles.card}>
-        <Text style={styles.heading}>ورود</Text>
+        <Card.Cover
+          style={{
+            resizeMode: 'contain',
+            marginTop: 5,
+            width: 160,
+            height: 120,
+            alignSelf: 'center',
+          }}
+          source={require('../../../assets/images/logotype.jpeg')}
+        />
+        {/* <Text style={styles.heading}>ورود</Text> */}
         <View style={styles.form}>
           <View style={styles.inputs}>
             <TextInput
@@ -113,14 +126,14 @@ const Login = ({navigation}) => {
             <TextInput
               secureTextEntry={true}
               style={styles.input}
-              placeholder="رمز"
+              placeholder="***"
               onChangeText={setPassword}
             />
             <Text style={[styles.message, {color: isError ? 'red' : 'green'}]}>
               {message ? getMessage() : null}
             </Text>
             {isLoading ? (
-              <ActivityIndicator size="large" color={COLORS.orange} />
+              <ActivityIndicator size="large" color={COLORS.dotin_green} />
             ) : (
               <TouchableOpacity style={styles.button} onPress={onSubmitHandler}>
                 <Text style={styles.buttonText}>ورود</Text>
